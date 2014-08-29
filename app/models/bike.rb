@@ -6,11 +6,9 @@ class Bike < ActiveRecord::Base
   belongs_to :buyer
 
   def favorited_by
-    
    brand = self.brand
    person = Buyer.find_by(:favorite_brand => brand)
    "#{person.first_name} #{person.last_name}"
-
   end
 
 end
